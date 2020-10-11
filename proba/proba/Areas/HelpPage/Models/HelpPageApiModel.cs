@@ -20,6 +20,7 @@ namespace proba.Areas.HelpPage.Models
             SampleRequests = new Dictionary<MediaTypeHeaderValue, object>();
             SampleResponses = new Dictionary<MediaTypeHeaderValue, object>();
             ErrorMessages = new Collection<string>();
+
         }
 
         /// <summary>
