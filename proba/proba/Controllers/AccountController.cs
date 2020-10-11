@@ -1,4 +1,5 @@
 ﻿using proba.Helpers.Accounts;
+using proba.Helpers.Currency;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,17 @@ namespace proba.Controllers
 
 
             var model = AccountHelper.GetAccountsList();
+
+            return View(model);
+        }
+
+        public ActionResult ShowDeviza()
+        {
+
+            ViewBag.Title = "Actual Deviza";
+
+            var model = CurrencyHelper.GetActualCurrency();
+            //var model = AccountHelper.GetAccountsList();
 
             return View(model);
         }

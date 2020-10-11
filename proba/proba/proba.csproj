@@ -164,9 +164,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Accounts\AccountHelper.cs" />
+    <Compile Include="Helpers\Currency\CurrencyHelper.cs" />
+    <Compile Include="Helpers\HttpHelpers\HttpHelper.cs" />
+    <Compile Include="Helpers\XMLHelpers\XMLHelper.cs" />
     <Compile Include="Models\Accounts\AbstractAccount.cs" />
     <Compile Include="Models\Accounts\CoverAccount.cs" />
     <Compile Include="Models\Accounts\CurrentAccount.cs" />
+    <Compile Include="Models\Currency\ActualCurrency.cs" />
     <Compile Include="Models\Currency\Currency.cs" />
     <Compile Include="Models\JsonFEResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,7 +232,7 @@
     <Content Include="Views\Account\CreateAccount.cshtml" />
     <Content Include="Views\Account\ListAccounts.cshtml" />
     <Content Include="Views\_partial\dialog.cshtml" />
-    <Content Include="Views\Account\UpdateDeviza.cshtml" />
+    <Content Include="Views\Account\ShowDeviza.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
