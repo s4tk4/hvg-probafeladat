@@ -1,0 +1,8 @@
+﻿@model List<proba.Models.Accounts.AbstractAccount>
+
+@foreach( var item in Model)
+{
+    <pre>
+        @Newtonsoft.Json.JsonConvert.SerializeObject(item)
+    </pre>
+}

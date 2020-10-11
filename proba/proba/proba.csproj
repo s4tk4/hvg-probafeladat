@@ -228,6 +228,7 @@
     <Content Include="Views\Account\CreateAccount.cshtml" />
     <Content Include="Views\Account\ListAccounts.cshtml" />
     <Content Include="Views\_partial\dialog.cshtml" />
+    <Content Include="Views\Account\UpdateDeviza.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

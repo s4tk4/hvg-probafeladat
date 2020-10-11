@@ -25,16 +25,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        @Html.ActionLink("Home", "Index", "Home", new { area = "", @class = "nav-item nav-link" }, null)
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("API", "Index", "Help", new { area = "", @class = "nav-item nav-link" }, null)
-                    </li>
-                    <li class="nav-item">
                         @Html.ActionLink("Szamlak", "ListAccounts", "Account", new { area = "", @class = "nav-item nav-link" }, null)
                     </li>
                     <li class="nav-item">
                         @Html.ActionLink("Uj Szamla", "CreateAccount", "Account", new { area = "", @class = "nav-item nav-link" }, null)
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Deviza aktualizalas", "UpdateDeviza", "Account", new { area = "", @class = "nav-item nav-link" }, null)
                     </li>
                 </ul>
 </div>

@@ -23,7 +23,7 @@ namespace proba.Repositories
         #region public 
         public static dblayer ME { get { if (Instance == null) { Instance = new dblayer(); } return Instance; } }
 
-        public void InsertNewItem(AbstractAccountList data, string v)
+        public void InsertNewItem(object data, string v)
         {
             string dataJson = Newtonsoft.Json.JsonConvert.SerializeObject(data);
             AppendJSONDataFile(dataJson, v);
@@ -70,7 +70,7 @@ namespace proba.Repositories
 
             if (!File.Exists(path))
             {
-                File.Create(path);
+                using (File.Create(path)) { } 
             }
             using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
             {

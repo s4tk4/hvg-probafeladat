@@ -1,8 +1,37 @@
 ﻿@model List<proba.Models.Accounts.AbstractAccount>
 
-@foreach( var item in Model)
-{
-    <pre>
-        @Newtonsoft.Json.JsonConvert.SerializeObject(item)
-    </pre>
-}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Account number</th>
+            <th scope="col">Owner name</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Has Credit line</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AccountNumber
+                </td>
+                <td>
+                    @item.OwnerName
+                </td>
+                <td>
+                    @item.Balance
+                </td>
+                <td>
+                    @item.Currency
+                </td>
+                <td>
+                    @item.ExistCreditLine
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
