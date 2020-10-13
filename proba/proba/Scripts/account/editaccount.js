@@ -66,6 +66,7 @@ function processReuquestData(dataJSON, dom) {
                 jQuery.each(result.ResultMessage, function (i, e) {
                     modalString += e + "<br>";
                 })
+                location.reload()
             }
 
             showAlertModal(modalTitle, modalString);
