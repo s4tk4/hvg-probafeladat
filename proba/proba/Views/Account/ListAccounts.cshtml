@@ -10,6 +10,7 @@
             <th scope="col">Balance</th>
             <th scope="col">Currency</th>
             <th scope="col">Has Credit line</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +32,15 @@
                 <td>
                     @item.ExistCreditLine
                 </td>
+                <td>
+                    <button onClick="incrementBalance('@item.AccountNumber')">Befizetes</button>
+                    <button onClick="decrementBalance('@item.AccountNumber')">Utalas</button>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+@Scripts.Render("~/editAccount")
+@Html.Partial("~/Views/_partial/inpaymentmodal.cshtml")
+@Html.Partial("~/Views/_partial/paytransfermodal.cshtml")

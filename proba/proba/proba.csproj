@@ -170,6 +170,8 @@
     <Compile Include="Models\Accounts\AbstractAccount.cs" />
     <Compile Include="Models\Accounts\CoverAccount.cs" />
     <Compile Include="Models\Accounts\CurrentAccount.cs" />
+    <Compile Include="Models\Accounts\InPaymentRequest.cs" />
+    <Compile Include="Models\Accounts\PayTransferRequest.cs" />
     <Compile Include="Models\Currency\ActualCurrency.cs" />
     <Compile Include="Models\Currency\Currency.cs" />
     <Compile Include="Models\JsonFEResult.cs" />
@@ -186,6 +188,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\account\editaccount.js" />
     <Content Include="Scripts\account\newaccount.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -233,6 +236,8 @@
     <Content Include="Views\Account\ListAccounts.cshtml" />
     <Content Include="Views\_partial\dialog.cshtml" />
     <Content Include="Views\Account\ShowDeviza.cshtml" />
+    <Content Include="Views\_partial\inpaymentmodal.cshtml" />
+    <Content Include="Views\_partial\paytransfermodal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

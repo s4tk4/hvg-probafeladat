@@ -49,5 +49,11 @@ namespace proba.Repositories
             //accountItems.Items.Add(data);
             dblayer.ME.InsertNewItem(data, data.AccountNumber);
         }
+
+        internal static void UpdateAccount(AbstractAccount data)
+        {
+            
+            dblayer.ME.UpdateItem(data);
+        }
     }
 }

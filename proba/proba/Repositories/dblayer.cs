@@ -23,10 +23,10 @@ namespace proba.Repositories
         #region public 
         public static dblayer ME { get { if (Instance == null) { Instance = new dblayer(); } return Instance; } }
 
-        public void InsertNewItem(object data, string v)
+        public void InsertNewItem(object data, string accountNumber)
         {
             string dataJson = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-            AppendJSONDataFile(dataJson, v);
+            WriteJSONDataFile(dataJson, accountNumber);
         }
 
         public T GetItems<T>(string tablename) where T : class, new()
@@ -59,7 +59,7 @@ namespace proba.Repositories
 
         }
 
-        private void AppendJSONDataFile(string data, string fileName)
+        private void WriteJSONDataFile(string data, string fileName)
         {
             string dbdatafolder = ConfigurationManager.AppSettings["dbdatafolder"];
             string path = Path.Combine(dbdatafolder, fileName);
@@ -72,10 +72,16 @@ namespace proba.Repositories
             {
                 using (File.Create(path)) { } 
             }
-            using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
+            using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8))
             {
                 sw.WriteLine(data);
             }
+        }
+
+        internal void UpdateItem(AbstractAccount data)
+        {
+            string dataJson = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+            WriteJSONDataFile(dataJson, data.AccountNumber);
         }
         #endregion
     }

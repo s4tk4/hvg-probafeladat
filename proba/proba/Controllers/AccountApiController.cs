@@ -31,5 +31,41 @@ namespace proba.Controllers
             response.Content = new StringContent(jsondataresultstring);
             return response;
         }
+
+        [Route("api/AccountApi/inpaymentmodal")]
+        [HttpPost]
+        public HttpResponseMessage InPayment(Models.Accounts.InPaymentRequest data)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            JsonFEResult jsonResult = new JsonFEResult();
+           
+            if (AccountHelper.IsValidDataForPayment(data, jsonResult))
+            {
+                AccountHelper.DoPayment(data, jsonResult);
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            
+            string jsondataresultstring = jsonResult.GetDataString();
+            response.Content = new StringContent(jsondataresultstring);
+            return response;
+        }
+
+        [Route("api/AccountApi/paytransfermodal")]
+        [HttpPost]
+        public HttpResponseMessage PayTransfer(Models.Accounts.PayTransferRequest data)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            JsonFEResult jsonResult = new JsonFEResult();
+
+            if (AccountHelper.IsValidDataForTransfer(data, jsonResult))
+            {
+                AccountHelper.DoTransfer(data, jsonResult);
+                response.StatusCode = HttpStatusCode.OK;
+            }
+
+            string jsondataresultstring = jsonResult.GetDataString();
+            response.Content = new StringContent(jsondataresultstring);
+            return response;
+        }
     }
 }

@@ -1,10 +1,12 @@
-﻿console.log('aa')
-
+﻿
 function createNewAccount() {
     var accountForm = jQuery("#newaccountform");
     dataJSON = {
         AccountNumber: accountForm.find("#AccountNumber").val(),
-        Currency: accountForm.find("#Currency").val(),
+        Currency: {
+            ID: accountForm.find("#Currency").val(),
+            Name: accountForm.find("#Currency").html()
+        },
         Balance: accountForm.find("#Balance").val(),
         OwnerName: accountForm.find("#OwnerName").val(),
         CanWithdrawCash: accountForm.find("#CanWithdrawCash").val(),

@@ -27,6 +27,10 @@ namespace proba
             bundles.Add(new ScriptBundle("~/newAccount").Include(
                     "~/Scripts/account/newaccount.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/editAccount").Include(
+                    "~/Scripts/account/editaccount.js"
+                ));
         }
     }
 }
